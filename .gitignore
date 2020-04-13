@@ -123,3 +123,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+api_key.py
+.DS_Store
+Kuribo.json
+test.txt
+output.wav
