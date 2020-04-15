@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class="container">
-    <h1 class="text-center">Welcome to Koiyaku {{ user['username'] }}</h1>
+    <h1 class="text-center">Welcome to Koiyaku {{ current_user.username }}</h1>
     
     <ul>
         {% for friend in friends %}
