@@ -7,7 +7,7 @@
 	   	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/styles.css') }}">
 		<link href="https://fonts.googleapis.com/css?family=Pontano+Sans:300,400|M+PLUS+Rounded+1c:100,300,400&display=swap&subset=japanese" rel="stylesheet">
-		<link rel="icon" href="static/img/fav.png">
+		<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 		<title>恋訳 | KOIYAKU</title>
 	</head>
 	<body style="padding: 40px 80px 0px 80px;">
@@ -16,11 +16,29 @@
 		<div class="jumbotron-fluid parallax white tinted banner">
 			<div class="untinted" lang="{% if index %}en{% else %}ja{% endif %}">
 				<h1>{% if index %}Koiyaku{% endif %}</h1>
+				<h1>{% if chat %}Chat{% endif %}</h1>
+				<h1>{% if talk %}Talk{% endif %}</h1>
 				{% if index %}
 					<h3>Fall in love with the allure of language</h3>
 				{% endif %}
+				{% if chat %}
+					<h3>Let's chat with someone who could change your life</h3>
+				{% endif %}
+				{% if talk %}
+					<h3>Speak your mind and reach someone's heart</h3>
+				{% endif %}
 			</div>
 		</div>
+
+		{% with messages = get_flashed_messages() %}
+		{% if messages %}
+		<ul>
+			{% for message in messages %}
+			<li>{{ message }}</li>
+			{% endfor %}
+		</ul>
+		{% endif %}
+		{% endwith %}
         
         {% block content %}
 		{% endblock %}

@@ -1,13 +1,15 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-none justify-content-between">
-        <a href="#"><img src="static/img/logo.png" height="50px"></a>
+        <a href="{{ url_for('index') }}"><img src="static/img/logo.png" height="50px"></a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Chat</a>
+                    <a class="nav-link {% if chat %}active{% endif %}" 
+                       href="{{ url_for('chat') }}">Chat</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Talk</a>
+                    <a class="nav-link {% if talk %}active{% endif %}" 
+                       href="{{ url_for('talk') }}">Talk</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -21,7 +23,7 @@
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto nav nav-pills">
-                <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}">Login</a></li>
                 <li class="nav-item reg"><a class="nav-link" href="#">Register</a></li>
             </ul>
         </div>
