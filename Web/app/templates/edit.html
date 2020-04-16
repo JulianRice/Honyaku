@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>Edit Profile</h1>
+<form action="" method="post" class="padding">
+    {{ form.hidden_tag() }}
+    <div class="row">
+        <div class="col-md-3">
+            <p class="text-center">
+                {{ form.eFirst.label }} {{ form.eFirst(size=16) }}
+                {% for error in form.eFirst.errors %}
+                <span style="color: pink">*{{ error }}</span>
+                {% endfor %}
+            </p>
+        </div>
+        <div class="col-md-3">
+            <p class="text-center">
+                {{ form.eLast.label }} {{ form.eLast(size=16) }}
+                {% for error in form.eLast.errors %}
+                <span style="color: pink">*{{ error }}</span>
+                {% endfor %}
+            </p>
+        </div>
+        <div class="col-md-3">
+            <p class="text-center">
+                {{ form.jFirst.label }} {{ form.jFirst(size=16) }}
+                {% for error in form.jFirst.errors %}
+                <span style="color: pink">*{{ error }}</span>
+                {% endfor %}
+            </p>
+        </div>
+        <div class="col-md-3">
+            <p class="text-center">
+                {{ form.jLast.label }} {{ form.jLast(size=16) }}
+                {% for error in form.jLast.errors %}
+                <span style="color: pink">*{{ error }}</span>
+                {% endfor %}
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p class="text-center">{{ form.submit() }}</p>
+        </div>
+    </div>
+</form>
+{% endblock %}

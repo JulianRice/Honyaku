@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>User: {{ user.username }}</h1>
+<h3><a href="{{ url_for('edit') }}">Edit Profile</a></h3>
+<img class="image-center" src="{{ user.Avatar(128) }}">
+{% if user.eFirst and user.eLast %}<h3>{{ user.eFirst }} {{ user.eLast }}</h3>{% endif %}
+{% if user.about_me %}<p class="text-center">{{ user.about_me }}</p>{% endif %}
+<p class="text-center">Account created on {{ user.timestamp.strftime('%B %d %Y') }}</p>
+{% if user.last_seen %}<p class="text-center">Last seen on: {{ user.last_seen.strftime('%B %d %Y') }} </p>{% endif %}
+{% endblock %}
