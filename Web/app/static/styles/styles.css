@@ -1,0 +1,53 @@
+.navbar-inner {
+    background:transparent;
+}
+
+body {
+    background-color: #140022;
+    color: rgb(83, 205, 243);
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 100;
+}
+.matchMe {
+    padding: 50px;
+}
+
+.reg {
+    background-color: rgb(224, 51, 169);
+    border-radius: 5px;
+    margin-left: 15px;
+}
+
+h1, h2, h3 {
+    font-weight: 100;
+    text-align: center;
+}
+
+.padding {
+    padding: 20px;
+}
+.image-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+.center-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    background-color:#000000;
+    color: #dc47ba;
+    border: 0px;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: 100;
+    text-align: center;
+}
+
+input:hover {
+    background-color: #3b053a;
+}

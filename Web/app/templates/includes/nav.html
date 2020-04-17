@@ -1,0 +1,39 @@
+<header>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-none justify-content-between">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <a href="{{ url_for('index') }}"><img style="padding-right: 10px;" src="{{ url_for('static', filename='img/logo.png') }}" height="40px"></a>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link {% if chat %}active{% endif %}" 
+                       href="{{ url_for('chat') }}">Chat</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if talk %}active{% endif %}" 
+                       href="{{ url_for('talk') }}">Talk</a>
+                </li>
+                <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    My Account
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Profile</a>
+                        <a class="dropdown-item" href="#">Settings</a>
+                        <div class="dropdown-divider"></div>
+                    </div>
+                </li> -->
+            </ul>
+            <ul class="navbar-nav ml-auto nav nav-pills">
+                {% if current_user.is_anonymous %}
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}">Login</a></li>
+                <li class="nav-item reg"><a class="nav-link" href="{{ url_for('register') }}">Register</a></li>
+            </ul>
+            {% else %}
+            <ul class="navbar-nav ml-auto nav"></ul>
+                <li class="nav-item"><a class="nav-link {% if profile %}active{% endif %}" href="{{ url_for('profile', username=current_user.username) }}">Profile</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Logout</a></li>
+            </ul>
+            {% endif %}
+                
+        </div>
+    </nav>
+</header>

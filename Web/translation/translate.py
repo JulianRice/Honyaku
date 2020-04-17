@@ -1,9 +1,9 @@
 from google.cloud import translate
 from google.cloud import speech_v1
 from google.cloud.speech_v1 import enums
-import api_key
 import io
 import app_audio as audio
+import api_key
 
 def sample_translate(text="test", project_id=api_key.project_id):
 	client = translate.TranslationServiceClient()
