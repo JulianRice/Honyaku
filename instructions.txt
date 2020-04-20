@@ -1,6 +1,7 @@
 1. cd Documents/GitHub/Honyaku
 2. source venv/bin/activate
-3. python3 translate.py
+3. export GOOGLE_APPLICATION_CREDENTIALS="/Users/ena/Documents/GitHub/Honyaku/Kuribo.json"
+4. python3 translate.py
 
 ls -> find all files in the current directory
 ls -al -> find all files in more detail
